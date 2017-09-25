@@ -1,0 +1,25 @@
+.navbar-container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.navbar {
+  background-color: #222;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  .logo-container {
+    width: 100px;
+    text-align: center;
+    padding: auto;
+
+    .logo-text {
+      height: 60px;
+      font-size: 1.2em;
+      color: #fff;
+    }
+  }
+}
