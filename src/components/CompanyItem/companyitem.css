@@ -1,0 +1,24 @@
+.company-container {
+  display: inline-block;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0px;
+
+  .image-container {
+    padding: 4px;
+    margin: 4px;
+    .company-logo {
+      max-width: 20px;
+    }
+  }
+
+  .name-container {
+    .company-name {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.8em;
+      font-weight: normal;
+      margin: 8px 8px;
+    }
+  }
+}
