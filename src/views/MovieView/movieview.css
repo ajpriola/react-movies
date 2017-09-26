@@ -1,0 +1,39 @@
+.movie-container {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.movie-header {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  color: #fff;
+  padding: 16px;
+  margin: 16px;
+  background: #222;
+
+  font-family: 'PT Sans', sans-serif;
+
+  .title-date-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movie-image {
+    max-height: 200px;
+    display: block;
+    margin: 8px;
+  }
+
+  .movie-title {
+    font-size: 2em;
+    margin: 8px 0 0 8px;
+  }
+
+  .movie-date {
+    font-size: 1.4em;
+    margin: 8px 0 0 8px;
+  }
+}
