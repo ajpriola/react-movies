@@ -6,19 +6,23 @@ class MovieCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: props.title,
-      imageUrl: props.imageUrl
+      movie: props.movie
     };
   }
 
   render() {
+    const movie = this.state.movie;
+    const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const year = new Date(movie.release_date).getFullYear();
+    console.log(movie);
     return (
       <div className="card-container">
         <div className="card-header">
-          <img className="movie-image" src={this.state.imageUrl} alt="" />
-          <div className="movie-overlay">
-            <h3 className="movie-title">{this.state.title}</h3>
-            <h3 className="movie-date">Date</h3>
+          <img className="movie-image" src={posterUrl} alt="" />
+          <div className="movie-info">
+            <h3 className="movie-title">{movie.title}</h3>
+            <h3 className="movie-date">{year}</h3>
+            <p className="movie-overview">{movie.overview}</p>
           </div>
         </div>
       </div>
@@ -27,8 +31,7 @@ class MovieCard extends Component {
 }
 
 MovieCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired
+  movie: PropTypes.shape({}).isRequired
 };
 
 export default MovieCard;

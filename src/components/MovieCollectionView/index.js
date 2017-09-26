@@ -8,17 +8,29 @@ class MovieCollectionView extends Component {
     this.state = {
       movies: []
     };
+    this.getTopMovies = this.getTopMovies.bind(this);
+  }
+
+  componentWillMount() {
+    this.getTopMovies();
+  }
+
+  getTopMovies() {
+    fetch(
+      'https://api.themoviedb.org/3/movie/popular?api_key=89b8b7adcb4465f94974e82a5a1f77e3&language=en-US&page=1'
+    )
+      .then(results => results.json())
+      .then((data) => {
+        this.setState({ movies: data.results });
+      });
   }
 
   render() {
-    return (
-      <div className="collection-container">
-        <MovieCard
-          title="La La Land"
-          imageUrl="https://image.tmdb.org/t/p/w500/ylXCdC106IKiarftHkcacasaAcb.jpg"
-        />
-      </div>
-    );
+    const cards = [];
+    this.state.movies.forEach((movie) => {
+      cards.push(<MovieCard key={movie.id} movie={movie} />);
+    });
+    return <div className="collection-container">{cards}</div>;
   }
 }
 

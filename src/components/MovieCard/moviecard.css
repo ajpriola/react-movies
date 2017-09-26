@@ -1,7 +1,7 @@
 .card-container {
   border-radius: 4px;
   margin: 8px;
-  min-width: 300px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -14,7 +14,7 @@
     background: #222;
     position: relative;
 
-    .movie-overlay {
+    .movie-info {
       opacity: 0;
       position: absolute;
       bottom: 0px;
@@ -22,6 +22,7 @@
       right: 0px;
       padding: 0px;
       background: #000;
+      color: #fff;
       -webkit-transition: opacity 250ms;
       -moz-transition: opacity 250ms;
       -o-transition: opacity 250ms;
@@ -32,29 +33,33 @@
       flex-direction: column;
       justify-content: flex-start;
 
+      font-family: 'PT Sans', sans-serif;
+
       .movie-title {
-        color: #fff;
-        padding: 8px;
-        font-family: 'PT Sans', sans-serif;
+        padding: 8px 0 0 8px;
         margin: 8px 0 0 0;
         font-size: 1.4em;
       }
 
       .movie-date {
-        color: #fff;
-        padding: 0 8px;
-        font-family: 'PT Sans', sans-serif;
+        padding: 8px;
         margin: 0;
         font-size: 1em;
       }
+
+      .movie-overview {
+        font-size: 1em;
+        padding: 0 8px;
+      }
     }
 
-    &:hover .movie-overlay {
+    &:hover .movie-info {
       opacity: 0.8;
     }
 
     .movie-image {
       display: block;
+      max-width: 100%;
       max-width: 300px;
     }
   }
