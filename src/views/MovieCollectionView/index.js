@@ -27,6 +27,7 @@ class MovieCollectionView extends Component {
 
   render() {
     const cards = [];
+
     this.state.movies.forEach((movie) => {
       cards.push(<MovieCard key={movie.id} movie={movie} />);
     });
