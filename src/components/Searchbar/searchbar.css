@@ -19,10 +19,22 @@
       flex-direction: column;
       justify-content: center;
 
+      margin: 8px;
+      font-size: 1.2em;
+
       .icon {
-        margin: 8px;
-        font-size: 1.2em;
         color: #999;
+      }
+
+      .icon-button {
+        background: none;
+        outline: none;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+          color: #3498db;
+        }
       }
     }
 

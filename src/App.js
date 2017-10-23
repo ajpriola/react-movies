@@ -18,20 +18,11 @@ class App extends Component {
   }
 
   searchCallback(query) {
+    console.log(query);
     this.setState({ query });
   }
 
   render() {
-    /*
-    const CollectionRoute = () => (
-      <Route
-        exact
-        path="/"
-        query={this.state.query}
-        render={() => <MovieCollectionView displayQuery={this.state.query} />}
-      />
-    ); */
-
     return (
       <div className="container">
         <Navbar searchCallback={this.searchCallback} />
@@ -43,4 +34,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;

@@ -21,7 +21,8 @@ class MovieCard extends Component {
 
   render() {
     const movie = this.state.movie;
-    const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const posterUrl =
+      movie.poster_path !== undefined ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '';
     const year = new Date(movie.release_date).getFullYear();
 
     return (
